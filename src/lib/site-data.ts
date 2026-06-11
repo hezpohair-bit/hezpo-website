@@ -13,7 +13,7 @@ import { whatsappBaseUrl } from "@/lib/utils";
 
 export const site = {
   name: "Hezpo",
-  url: "https://hezpo.com",
+  url: "https://www.hezpohair.com",
   description:
     "Hezpo is a Malaysia hair care and hair styling product company serving consumers, wholesalers, dealers, salons and barbers.",
   whatsapp: whatsappBaseUrl,
