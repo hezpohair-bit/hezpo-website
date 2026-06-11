@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { blogPosts, products, site } from "@/lib/site-data";
+import { blogPosts, faqGroups, products, site } from "@/lib/site-data";
 
 const routes = [
   "",
@@ -30,6 +30,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...blogPosts.map((post) => ({
       url: `${site.url}/blog/${post.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7
+    })),
+    ...faqGroups.map((group) => ({
+      url: `${site.url}/faq/${group.slug}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.7

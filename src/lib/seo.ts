@@ -5,12 +5,14 @@ type PageMetadataInput = {
   title: string;
   description: string;
   path: string;
+  keywords?: readonly string[];
 };
 
-export function pageMetadata({ title, description, path }: PageMetadataInput): Metadata {
+export function pageMetadata({ title, description, path, keywords }: PageMetadataInput): Metadata {
   return {
     title,
     description,
+    keywords: keywords ? [...keywords] : undefined,
     alternates: {
       canonical: path
     },
