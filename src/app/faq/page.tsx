@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQList } from "@/components/faq-list";
+import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { faqGroups } from "@/lib/site-data";
+import { faqPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -12,8 +14,13 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function FAQPage() {
+  const allFaqItems: { q: string; a: string }[] = faqGroups.flatMap((group) =>
+    group.items.map((item) => ({ q: item.q, a: item.a }))
+  );
+
   return (
     <>
+      <JsonLd data={faqPageSchema({ title: "Hezpo FAQ", items: allFaqItems })} />
       <PageHero eyebrow="FAQ" title="Answers for customers, wholesalers, dealers and salons." text="Find quick answers about Hezpo products, ordering, wholesale supply, dealer applications and professional salon support." />
       <section className="section-pad bg-mist">
         <div className="container-page grid gap-8 lg:grid-cols-2">

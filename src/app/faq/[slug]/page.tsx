@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/button-link";
 import { FAQList } from "@/components/faq-list";
+import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { faqGroups } from "@/lib/site-data";
+import { faqPageSchema } from "@/lib/schema";
 import { pageMetadata } from "@/lib/seo";
 
 type FAQCategoryPageProps = {
@@ -42,6 +44,7 @@ export default async function FAQCategoryPage({ params }: FAQCategoryPageProps) 
 
   return (
     <>
+      <JsonLd data={faqPageSchema(group)} />
       <PageHero eyebrow="Hezpo FAQ" title={group.title} text={`Answers for ${group.title.toLowerCase()} related to Hezpo Malaysia hair styling products and partner programs.`} primaryHref="/contact" primaryLabel="WhatsApp Inquiry" secondaryHref="/faq" secondaryLabel="All FAQ" />
       <section className="section-pad bg-mist">
         <div className="container-page max-w-4xl">

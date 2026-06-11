@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
+import { JsonLd } from "@/components/json-ld";
+import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { site } from "@/lib/site-data";
 import "./globals.css";
 
@@ -46,6 +48,8 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <JsonLd data={organizationSchema()} />
+        <JsonLd data={websiteSchema()} />
       </body>
     </html>
   );

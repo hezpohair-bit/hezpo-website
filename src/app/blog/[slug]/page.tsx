@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/button-link";
 import { FAQList } from "@/components/faq-list";
+import { JsonLd } from "@/components/json-ld";
 import { PageHero } from "@/components/page-hero";
 import { ProductCard } from "@/components/product-card";
 import { WhatsAppCTA } from "@/components/whatsapp-cta";
+import { blogPostingSchema, faqPageSchema } from "@/lib/schema";
 import { blogPosts, products } from "@/lib/site-data";
 import { pageMetadata } from "@/lib/seo";
 
@@ -49,6 +51,8 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
 
   return (
     <>
+      <JsonLd data={blogPostingSchema(post)} />
+      <JsonLd data={faqPageSchema({ title: `${post.title} FAQ`, items: post.faq })} />
       <PageHero eyebrow={post.category} title={post.title} text={post.description} primaryHref="/products" primaryLabel="Shop Products" secondaryHref="/contact" secondaryLabel="WhatsApp Inquiry" />
       <section className="section-pad bg-white">
         <article className="container-page max-w-4xl">

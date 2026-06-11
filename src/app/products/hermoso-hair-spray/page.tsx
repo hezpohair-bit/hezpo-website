@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ButtonLink } from "@/components/button-link";
 import { FAQList } from "@/components/faq-list";
+import { JsonLd } from "@/components/json-ld";
 import { ProductVisual } from "@/components/product-visual";
+import { productSchema } from "@/lib/schema";
 import type { Product } from "@/lib/site-data";
 import { products } from "@/lib/site-data";
 import { pageMetadata } from "@/lib/seo";
@@ -24,22 +26,25 @@ export default function HermosoHairSprayPage() {
 
 function ProductDetail({ product }: { product: Product }) {
   return (
-    <section className="section-pad bg-mist">
-      <div className="container-page grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-        <ProductVisual accent="red" name={product.shortName} />
-        <div className="rounded-md border border-line bg-white p-6 shadow-soft">
-          <p className="eyebrow">{product.category}</p>
-          <h1 className="mt-3 text-4xl font-black tracking-tight text-ink">{product.name}</h1>
-          <p className="mt-4 text-lg leading-8 text-charcoal/80">{product.summary}</p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink external href={whatsappMessage(`Hi Hezpo, I am interested in ${product.shortName}. Please send me more details.`)}>
-              WhatsApp Ask Button
-            </ButtonLink>
+    <>
+      <JsonLd data={productSchema(product)} />
+      <section className="section-pad bg-mist">
+        <div className="container-page grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <ProductVisual accent="red" name={product.shortName} />
+          <div className="rounded-md border border-line bg-white p-6 shadow-soft">
+            <p className="eyebrow">{product.category}</p>
+            <h1 className="mt-3 text-4xl font-black tracking-tight text-ink">{product.name}</h1>
+            <p className="mt-4 text-lg leading-8 text-charcoal/80">{product.summary}</p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink external href={whatsappMessage(`Hi Hezpo, I am interested in ${product.shortName}. Please send me more details.`)}>
+                WhatsApp Ask Button
+              </ButtonLink>
+            </div>
           </div>
         </div>
-      </div>
-      <ProductSections product={product} />
-    </section>
+        <ProductSections product={product} />
+      </section>
+    </>
   );
 }
 
