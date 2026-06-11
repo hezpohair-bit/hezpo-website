@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CheckCircle2 } from "lucide-react";
 import { FeatureGrid } from "@/components/feature-grid";
 import { InquiryForm } from "@/components/inquiry-form";
 import { PageHero } from "@/components/page-hero";
@@ -14,6 +15,14 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function SalonPage() {
+  const salonReasons = [
+    "Professional Styling Products",
+    "Retail Opportunities",
+    "Salon Pricing",
+    "Training Support",
+    "Malaysia Climate Suitable"
+  ];
+
   return (
     <>
       <PageHero eyebrow="Salon / Professional" title="Professional styling products for salons and barbers." text="Request salon pricing, retail program details and product demo support for Hezpo hair spray, hair clay and future professional SKUs." primaryHref="#salon-inquiry" primaryLabel="Salon Inquiry" secondaryHref="/products" secondaryLabel="View Products" />
@@ -21,6 +30,19 @@ export default function SalonPage() {
       <section className="section-pad bg-white">
         <div className="container-page">
           <FeatureGrid features={channelFeatures.salon} />
+        </div>
+      </section>
+      <section className="section-pad bg-mist">
+        <div className="container-page grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <SectionHeading eyebrow="Salon Benefits" title="Why Salons Choose Hezpo" text="Hezpo gives salons and barbers practical styling products that are easy to use professionally and suitable for retail recommendation." />
+          <div className="grid gap-3 sm:grid-cols-2">
+            {salonReasons.map((reason) => (
+              <div className="flex items-center gap-3 rounded-md border border-line bg-white p-4 font-bold text-ink shadow-soft" key={reason}>
+                <CheckCircle2 className="shrink-0 text-hezpo-green" size={20} />
+                {reason}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <section className="section-pad bg-mist">

@@ -12,13 +12,26 @@ export default function HomePage() {
       <section className="overflow-hidden border-b border-line bg-white">
         <div className="container-page grid min-h-[calc(100vh-4rem)] items-center gap-10 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:py-16">
           <div>
-            <p className="eyebrow">Malaysia hair care / hair styling products</p>
+            <p className="eyebrow">Professional Hair Styling Products For Malaysia Weather</p>
             <h1 className="mt-4 text-4xl font-black tracking-tight text-ink sm:text-5xl lg:text-6xl">
               Hezpo for shoppers, wholesalers, dealers and salons.
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-charcoal/80">
               Hezpo supplies professional hair styling products for consumers, salons, wholesalers and distributors in Malaysia.
             </p>
+            <p className="mt-4 text-sm font-black uppercase tracking-[0.18em] text-hezpo-red">
+              Extra Hold &bull; Fast Dry &bull; Non-Sticky
+            </p>
+            <div className="mt-5 grid max-w-xl gap-3 sm:grid-cols-2">
+              <Link className="focus-ring rounded-md border border-line bg-mist p-4 transition hover:border-hezpo-red hover:bg-white" href="/products/hermoso-hair-spray">
+                <span className="block text-lg font-black text-ink">Hermoso Hair Spray</span>
+                <span className="mt-1 block text-sm text-charcoal/75">Extra hold finishing spray</span>
+              </Link>
+              <Link className="focus-ring rounded-md border border-line bg-mist p-4 transition hover:border-hezpo-green hover:bg-white" href="/products/hsis-hair-clay">
+                <span className="block text-lg font-black text-ink">HSIS Hair Clay</span>
+                <span className="mt-1 block text-sm text-charcoal/75">Matte texture and control</span>
+              </Link>
+            </div>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/products">Shop Products</ButtonLink>
               <ButtonLink external href={whatsappMessage("Hi Hezpo, I want to ask about your hair styling products.")} variant="secondary">

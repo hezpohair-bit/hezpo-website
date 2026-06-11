@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CheckCircle2 } from "lucide-react";
 import { FeatureGrid } from "@/components/feature-grid";
 import { InquiryForm } from "@/components/inquiry-form";
 import { PageHero } from "@/components/page-hero";
@@ -15,6 +16,14 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function WholesalePage() {
+  const wholesaleReasons = [
+    "Malaysia Market Focus",
+    "Marketing Support",
+    "Growing Product Range",
+    "Fast Response",
+    "Dealer Opportunities"
+  ];
+
   return (
     <>
       <PageHero eyebrow="B2B Wholesale" title="Bulk supply for resellers, retailers and online sellers." text="Request MOQ, product catalog and bulk pricing for Hezpo hair styling products in Malaysia." primaryHref="#inquiry" primaryLabel="Wholesale Inquiry" secondaryHref="/products" secondaryLabel="View Catalog" />
@@ -22,6 +31,19 @@ export default function WholesalePage() {
       <section className="section-pad bg-white">
         <div className="container-page">
           <FeatureGrid features={channelFeatures.wholesale} />
+        </div>
+      </section>
+      <section className="section-pad bg-mist">
+        <div className="container-page grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <SectionHeading eyebrow="Wholesale Benefits" title="Why Wholesale With Hezpo" text="Hezpo is built for Malaysia reseller, retail and distribution channels with clear product education and responsive inquiry support." />
+          <div className="grid gap-3 sm:grid-cols-2">
+            {wholesaleReasons.map((reason) => (
+              <div className="flex items-center gap-3 rounded-md border border-line bg-white p-4 font-bold text-ink shadow-soft" key={reason}>
+                <CheckCircle2 className="shrink-0 text-hezpo-green" size={20} />
+                {reason}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <section className="section-pad bg-mist">

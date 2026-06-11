@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CheckCircle2 } from "lucide-react";
 import { FeatureGrid } from "@/components/feature-grid";
 import { InquiryForm } from "@/components/inquiry-form";
 import { PageHero } from "@/components/page-hero";
@@ -14,6 +15,14 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function DealerPage() {
+  const dealerBenefits = [
+    "Territory Opportunities",
+    "Product Training",
+    "Marketing Materials",
+    "Future SKU Expansion",
+    "Dedicated Support"
+  ];
+
   return (
     <>
       <PageHero eyebrow="Dealer / Distributor" title="Become a Hezpo dealer as the product range expands." text="Hezpo is building a practical Malaysia channel network for hair styling and future hair care SKUs." primaryHref="#apply" primaryLabel="Apply as Dealer" secondaryHref="/wholesale" secondaryLabel="Wholesale Info" />
@@ -21,6 +30,19 @@ export default function DealerPage() {
       <section className="section-pad bg-white">
         <div className="container-page">
           <FeatureGrid features={channelFeatures.dealer} />
+        </div>
+      </section>
+      <section className="section-pad bg-mist">
+        <div className="container-page grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <SectionHeading eyebrow="Dealer Benefits" title="Dealer Benefits" text="Hezpo supports dealers with territory opportunity, product education and room to grow as more styling and hair care SKUs are added." />
+          <div className="grid gap-3 sm:grid-cols-2">
+            {dealerBenefits.map((benefit) => (
+              <div className="flex items-center gap-3 rounded-md border border-line bg-white p-4 font-bold text-ink shadow-soft" key={benefit}>
+                <CheckCircle2 className="shrink-0 text-hezpo-green" size={20} />
+                {benefit}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
       <section className="section-pad bg-mist">
