@@ -36,7 +36,7 @@ function ProductDetail({ product }: { product: Product }) {
             <h1 className="mt-3 text-4xl font-black tracking-tight text-ink">{product.name}</h1>
             <p className="mt-4 text-lg leading-8 text-charcoal/80">{product.summary}</p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <ButtonLink external href={whatsappMessage(`Hi Hezpo, I am interested in ${product.shortName}. Please send me more details.`)}>
+              <ButtonLink external href={whatsappMessage(`Hi Hezpo, I am interested in ${product.shortName}. Please send me more details.`, { page: "product-hermoso", type: "consumer" })}>
                 WhatsApp Ask Button
               </ButtonLink>
             </div>

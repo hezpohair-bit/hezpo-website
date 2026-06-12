@@ -26,7 +26,7 @@ export default function DealerPage() {
   return (
     <>
       <PageHero eyebrow="Dealer / Distributor" title="Become a Hezpo dealer as the product range expands." text="Hezpo is building a practical Malaysia channel network for hair styling and future hair care SKUs." primaryHref="#apply" primaryLabel="Apply as Dealer" secondaryHref="/wholesale" secondaryLabel="Wholesale Info" />
-      <WhatsAppCTA title="Interested in dealer territory?" text="Ask Hezpo about dealer requirements, area opportunity, marketing support and training support." message="Hi Hezpo, I want to apply as a dealer or distributor." label="WhatsApp Dealer Inquiry" />
+      <WhatsAppCTA title="Interested in dealer territory?" text="Ask Hezpo about dealer requirements, area opportunity, marketing support and training support." message="Hi Hezpo, I want to apply as a dealer or distributor." page="dealer" type="dealer" label="WhatsApp Dealer Inquiry" />
       <section className="section-pad bg-white">
         <div className="container-page">
           <FeatureGrid features={channelFeatures.dealer} />

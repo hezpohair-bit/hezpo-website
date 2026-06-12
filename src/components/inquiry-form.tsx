@@ -29,10 +29,11 @@ const segments = [
 export function InquiryForm({ title, type }: InquiryFormProps) {
   const [interest, setInterest] = useState<InquirySegment>(type === "contact" ? "consumer" : type);
   const message = `Hi Hezpo, I am interested in ${labels[interest]}. Please send me more information.`;
+  const trackingPage = type === "contact" ? "contact" : type;
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    window.location.href = whatsappMessage(message);
+    window.location.href = whatsappMessage(message, { page: trackingPage, type: interest });
   }
 
   return (
@@ -76,7 +77,10 @@ export function InquiryForm({ title, type }: InquiryFormProps) {
             <ButtonLink
               className="w-full px-3"
               external
-              href={whatsappMessage(`Hi Hezpo, I am interested in ${segment.label}. Please send me more information.`)}
+              href={whatsappMessage(`Hi Hezpo, I am interested in ${segment.label}. Please send me more information.`, {
+                page: "contact",
+                type: segment.value
+              })}
               key={segment.value}
               variant={segment.value === "consumer" ? "primary" : "secondary"}
             >

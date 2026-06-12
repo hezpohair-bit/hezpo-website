@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Menu, MessageCircle } from "lucide-react";
-import { navLinks, site } from "@/lib/site-data";
+import { navLinks } from "@/lib/site-data";
+import { whatsappMessage } from "@/lib/utils";
 
 export function Header() {
   return (
@@ -20,7 +21,7 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <a className="focus-ring hidden min-h-10 items-center gap-2 rounded-md bg-hezpo-green px-4 text-sm font-bold text-white hover:bg-ink sm:inline-flex" href={site.whatsapp} rel="noreferrer" target="_blank">
+          <a className="focus-ring hidden min-h-10 items-center gap-2 rounded-md bg-hezpo-green px-4 text-sm font-bold text-white hover:bg-ink sm:inline-flex" href={whatsappMessage("Hi Hezpo, I want to make an inquiry.", { page: "global-header", type: "contact" })} rel="noreferrer" target="_blank">
             <MessageCircle aria-hidden="true" size={16} />
             WhatsApp
           </a>

@@ -3,7 +3,7 @@ import { CheckCircle2, MapPin } from "lucide-react";
 import { ButtonLink } from "@/components/button-link";
 import { ProductCard } from "@/components/product-card";
 import { SectionHeading } from "@/components/section-heading";
-import { customerPaths, products, site, trustPoints } from "@/lib/site-data";
+import { customerPaths, products, trustPoints } from "@/lib/site-data";
 import { whatsappMessage } from "@/lib/utils";
 
 export default function HomePage() {
@@ -34,7 +34,7 @@ export default function HomePage() {
             </div>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/products">Shop Products</ButtonLink>
-              <ButtonLink external href={whatsappMessage("Hi Hezpo, I want to ask about your hair styling products.")} variant="secondary">
+              <ButtonLink external href={whatsappMessage("Hi Hezpo, I want to ask about your hair styling products.", { page: "home", type: "consumer" })} variant="secondary">
                 WhatsApp Inquiry
               </ButtonLink>
             </div>
@@ -121,7 +121,7 @@ export default function HomePage() {
           <ButtonLink href="/contact" variant="primary">
             Contact Hezpo
           </ButtonLink>
-          <ButtonLink external href={site.whatsapp} variant="secondary">
+          <ButtonLink external href={whatsappMessage("Hi Hezpo, I want to make an inquiry.", { page: "home", type: "contact" })} variant="secondary">
             WhatsApp Inquiry
           </ButtonLink>
         </div>

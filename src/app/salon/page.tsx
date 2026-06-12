@@ -26,7 +26,7 @@ export default function SalonPage() {
   return (
     <>
       <PageHero eyebrow="Salon / Professional" title="Professional styling products for salons and barbers." text="Request salon pricing, retail program details and product demo support for Hezpo hair spray, hair clay and future professional SKUs." primaryHref="#salon-inquiry" primaryLabel="Salon Inquiry" secondaryHref="/products" secondaryLabel="View Products" />
-      <WhatsAppCTA title="Need salon pricing or demo support?" text="Message Hezpo for professional pricing, retail program details and product usage guidance." message="Hi Hezpo, I want to ask about salon pricing and demo support." label="WhatsApp Salon Inquiry" />
+      <WhatsAppCTA title="Need salon pricing or demo support?" text="Message Hezpo for professional pricing, retail program details and product usage guidance." message="Hi Hezpo, I want to ask about salon pricing and demo support." page="salon" type="salon" label="WhatsApp Salon Inquiry" />
       <section className="section-pad bg-white">
         <div className="container-page">
           <FeatureGrid features={channelFeatures.salon} />

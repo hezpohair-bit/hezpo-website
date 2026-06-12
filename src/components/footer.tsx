@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, MessageCircle, ShoppingBag } from "lucide-react";
 import { site } from "@/lib/site-data";
+import { whatsappMessage } from "@/lib/utils";
 
 const footerLinks = [
   { href: "/products", label: "Products" },
@@ -40,7 +41,7 @@ export function Footer() {
         <div>
           <p className="text-sm font-bold">Contact</p>
           <div className="mt-4 space-y-3 text-sm text-white/75">
-            <a className="flex items-center gap-2 hover:text-white" href={site.whatsapp} rel="noreferrer" target="_blank">
+            <a className="flex items-center gap-2 hover:text-white" href={whatsappMessage("Hi Hezpo, I want to make an inquiry.", { page: "global-footer", type: "contact" })} rel="noreferrer" target="_blank">
               <MessageCircle size={16} /> WhatsApp
             </a>
             <a className="flex items-center gap-2 hover:text-white" href={site.shopee} rel="noreferrer" target="_blank">

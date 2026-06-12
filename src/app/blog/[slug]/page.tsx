@@ -96,7 +96,7 @@ export default async function BlogPostPage({ params }: BlogPageProps) {
           <FAQList items={post.faq} />
         </div>
       </section>
-      <WhatsAppCTA title="Need product advice?" text="Ask Hezpo which product is suitable for your hairstyle, salon or reseller channel." message={`Hi Hezpo, I read ${post.title} and want product advice.`} />
+      <WhatsAppCTA title="Need product advice?" text="Ask Hezpo which product is suitable for your hairstyle, salon or reseller channel." message={`Hi Hezpo, I read ${post.title} and want product advice.`} page={`blog-${post.slug}`} type="consumer" />
     </>
   );
 }

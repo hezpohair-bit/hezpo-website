@@ -27,7 +27,7 @@ export default function WholesalePage() {
   return (
     <>
       <PageHero eyebrow="B2B Wholesale" title="Bulk supply for resellers, retailers and online sellers." text="Request MOQ, product catalog and bulk pricing for Hezpo hair styling products in Malaysia." primaryHref="#inquiry" primaryLabel="Wholesale Inquiry" secondaryHref="/products" secondaryLabel="View Catalog" />
-      <WhatsAppCTA title="Need MOQ or bulk pricing?" text="Send a quick WhatsApp inquiry and Hezpo can follow up with product mix, quantity and delivery details." message="Hi Hezpo, I want to ask about wholesale MOQ and bulk pricing." label="WhatsApp Wholesale Inquiry" />
+      <WhatsAppCTA title="Need MOQ or bulk pricing?" text="Send a quick WhatsApp inquiry and Hezpo can follow up with product mix, quantity and delivery details." message="Hi Hezpo, I want to ask about wholesale MOQ and bulk pricing." page="wholesale" type="wholesale" label="WhatsApp Wholesale Inquiry" />
       <section className="section-pad bg-white">
         <div className="container-page">
           <FeatureGrid features={channelFeatures.wholesale} />
