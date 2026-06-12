@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { JsonLd } from "@/components/json-ld";
@@ -50,6 +51,22 @@ export default function RootLayout({
         <Footer />
         <JsonLd data={organizationSchema()} />
         <JsonLd data={websiteSchema()} />
+        <Script id="metricool-tracking" strategy="afterInteractive">
+          {`
+            function loadScript(a){
+              var b=document.getElementsByTagName("head")[0],
+              c=document.createElement("script");
+              c.type="text/javascript";
+              c.src="https://tracker.metricool.com/resources/be.js";
+              c.onreadystatechange=a;
+              c.onload=a;
+              b.appendChild(c);
+            }
+            loadScript(function(){
+              beTracker.t({hash:"ed852a430f7ae487df737e1aabe2e5c7d"});
+            });
+          `}
+        </Script>
       </body>
     </html>
   );
