@@ -1,0 +1,37 @@
+{
+  "name": "hezpo-website-ops",
+  "version": "0.1.0",
+  "description": "Reusable Codex workflows for Hezpo website audits, product page updates, SEO content, and e-commerce conversion checks.",
+  "author": {
+    "name": "Hezpo Hair",
+    "email": "hezpohair@gmail.com",
+    "url": "https://www.hezpohair.com"
+  },
+  "homepage": "https://www.hezpohair.com",
+  "repository": "https://github.com/hezpohair-bit/hezpo-website",
+  "license": "UNLICENSED",
+  "keywords": [
+    "hezpo",
+    "nextjs",
+    "seo",
+    "ecommerce",
+    "shopee",
+    "tiktok"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Hezpo Website Ops",
+    "shortDescription": "Audit and optimize Hezpo website workflows.",
+    "longDescription": "Reusable Codex workflows for Hezpo website audits, product page updates, SEO content, image integration, WhatsApp inquiry checks, and Shopee/TikTok conversion support without touching secrets or live seller accounts.",
+    "developerName": "Hezpo Hair",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://www.hezpohair.com",
+    "defaultPrompt": [
+      "Use Hezpo Website Ops to audit the homepage with Chrome DevTools and produce a markdown report.",
+      "Use Hezpo Website Ops to add a verified product page and run npm run build.",
+      "Use Hezpo Website Ops to improve Malaysia-market SEO copy without making unverified product claims."
+    ]
+  }
+}
