@@ -1,0 +1,20 @@
+{
+  "name": "hezpo-local-plugins",
+  "interface": {
+    "displayName": "Hezpo Local Plugins"
+  },
+  "plugins": [
+    {
+      "name": "hezpo-website-ops",
+      "source": {
+        "source": "local",
+        "path": "./plugins/hezpo-website-ops"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
