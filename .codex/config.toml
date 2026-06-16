@@ -1,0 +1,14 @@
+# Project-scoped Codex configuration for the Hezpo website repo.
+# Codex loads this only after the project is trusted.
+# Keep secrets out of this file.
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp@latest"]
+
+[mcp_servers.chrome-devtools]
+command = "npx"
+args = ["chrome-devtools-mcp@latest"]
+
+[mcp_servers.openaiDeveloperDocs]
+url = "https://developers.openai.com/mcp"
