@@ -1,0 +1,15 @@
+{
+  "mcp_servers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp@latest"]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["chrome-devtools-mcp@latest"]
+    },
+    "openaiDeveloperDocs": {
+      "url": "https://developers.openai.com/mcp"
+    }
+  }
+}
