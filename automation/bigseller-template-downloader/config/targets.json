@@ -1,0 +1,83 @@
+{
+  "loginUrls": [
+    "https://www.bigseller.com/ms_MY/login.htm",
+    "https://www.bigseller.com/en_US/login.htm",
+    "https://www.bigseller.com/login.htm"
+  ],
+  "authMarkers": [
+    "Inventory",
+    "Merchant SKU",
+    "Products",
+    "Orders",
+    "Inventori",
+    "库存",
+    "Pergudangan"
+  ],
+  "loginMarkers": [
+    "Log In",
+    "Login",
+    "Log Masuk",
+    "登录",
+    "Captcha",
+    "验证码"
+  ],
+  "templates": [
+    {
+      "id": "shopee-product-import",
+      "canonicalName": "01-shopee-product-import-template",
+      "description": "Shopee product import/create template",
+      "navigation": [
+        ["Products", "Product", "商品"],
+        ["Listings", "Product Listings", "商品列表"],
+        ["Shopee"],
+        ["Draft", "Drafts", "草稿"]
+      ],
+      "actions": [
+        ["Import to Create Products", "Import & Create Products", "Import Products", "导入创建商品"],
+        ["Download a Template", "Download Template", "Muat turun templat", "下载模板", "Unduh Template"]
+      ]
+    },
+    {
+      "id": "merchant-sku-update",
+      "canonicalName": "02-merchant-sku-import-update-template",
+      "description": "Merchant SKU import/update template",
+      "navigation": [
+        ["Inventory", "Inventori", "库存", "Pergudangan"],
+        ["Merchant SKU", "SKU Pedagang", "商家 SKU", "SKU Gudang"]
+      ],
+      "actions": [
+        ["Import & Export", "Import and Export", "Import & Eksport", "导入导出", "Impor & Ekspor"],
+        ["Update Merchant SKU", "Import & Update", "Import Merchant SKU", "更新商家 SKU", "Impor SKU Gudang"],
+        ["Download a Template", "Download Template", "Muat turun templat", "下载模板", "Unduh Template"]
+      ]
+    },
+    {
+      "id": "bulk-sku-mapping",
+      "canonicalName": "03-bulk-store-sku-mapping-template",
+      "description": "Bulk Store SKU to Merchant SKU mapping template",
+      "navigation": [
+        ["Inventory", "Inventori", "库存", "Pergudangan"],
+        ["Merchant SKU", "SKU Pedagang", "商家 SKU", "SKU Gudang"]
+      ],
+      "actions": [
+        ["Import & Export", "Import and Export", "Import & Eksport", "导入导出", "Impor & Ekspor"],
+        ["Store SKU Mapping", "Add Mapping Relationship with Store SKU", "SKU Kedai", "店铺 SKU 映射", "Hubungan Pemetaan"],
+        ["Download Import Template", "Download a Template", "Download Template", "Muat turun templat", "下载模板", "Unduh Template"]
+      ]
+    },
+    {
+      "id": "inventory-safety-stock-shelf",
+      "canonicalName": "04-inventory-safety-stock-shelf-template",
+      "description": "Inventory import template containing Safety Stock and Shelf fields",
+      "navigation": [
+        ["Inventory", "Inventori", "库存", "Pergudangan"],
+        ["Inventory List", "Senarai Inventori", "库存列表", "Rincian Stok"]
+      ],
+      "actions": [
+        ["Import & Export", "Import and Export", "Import & Eksport", "导入导出", "Impor & Ekspor"],
+        ["Import Merchant SKU", "Import and Update", "Import & Update", "导入商家 SKU", "Impor SKU Gudang"],
+        ["Download a Template", "Download Template", "Muat turun templat", "下载模板", "Unduh Template"]
+      ]
+    }
+  ]
+}
